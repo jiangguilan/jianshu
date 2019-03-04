@@ -27,7 +27,14 @@
         @$pwd = $_GET['pwd'];
         @$gender = $_GET['gender'];
         @$born = $_GET['born'];
-        
+        if(!$gender)
+        {
+            $gender = null;
+        }
+        if(!$born)
+        {
+            $born = null;
+        }
         if(!$name)
         {
             return [
@@ -48,14 +55,7 @@
                 "code" => 0,
                 "msg" => "pwd"
             ];
-        }
-        else if(!$gender)
-        {
-            $gender = null;
-        }
-        else if(!$born)
-        {
-            $born = null;
+
         }
         else
         {   
@@ -82,23 +82,20 @@
             }              
             else{
                 require('./isExists.php');
-                echo '</br>1';
-                var_dump(check('user_name',$name,'user'));
-                echo '</br>2';
-                var_dump(check('user_account',$account,'user'));
-                if(check('user_name',$name,'user'))
+                // var_dump(gettype(check('user_name',$name,'user')));
+                // var_dump(json_encode(check('user_account',$account,'user')));
+                // return;
+                $checkNameResult = check('user_name',$name,'user');
+                $checkAccountResult = check('user_account',$account,'user');
+                if(gettype($checkNameResult) == "array" && count($checkNameResult) == 1)
                 {
-                    echo '</br>3';
-                    echo 'name';
                     return [
                         "code" => 0,
                         "msg" => "用户名已存在！"
                     ];
                 }
-                else if(check('user_account',$account,'user'))
+                else if(gettype($checkAccountResult) == "array" && count($checkAccountResult) == 1)
                 {
-                    echo '</br>4';
-                    echo 'pwd';
                     return [
                         "code" => 0,
                         "msg" => "账号已存在！"

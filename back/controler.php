@@ -4,6 +4,8 @@
         require('./Auth.php');
 
         function result($data){
+            var_dump($data);
+            // echo'</br>';
             if($data["code"]==1)
             {
                 echo json_encode(["ack" => "success","msg" => "","data" => $data["data"]]);

@@ -1,0 +1,58 @@
+.leftSidePage{
+    .box{
+        .item{
+            margin-bottom: .06rem;
+        }
+    }
+    .author{
+        margin: .1rem 0;
+        .item{
+            margin: .2rem 0;
+            &.title{
+                span{
+                    color: $subTextColor;
+                    font-size: $smallFontSize;
+                }
+            }
+            &.text{
+                .img-box{
+                    width: .48rem;
+                    height: .48rem;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-right: .1rem;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .msg{
+                    line-height: .25rem;
+                    .name{
+                        font-size: .14rem;
+                    }
+                    .subText{
+                        font-size: .12rem;
+                        color: $midGrey;
+                    }
+                }
+                .follow{
+                    font-size: .13rem;
+                    color: $mainGreen;
+                    font-weight: 700;
+                }
+            }
+            &.view-more{
+                width: 100%;
+                height: .35rem;
+                line-height: .35rem;
+                background: #f7f7f7;
+                border: 1px solid #dcdcdc;
+                font-size: 13px;
+                color: #787878;
+                text-align: center;
+                border-radius: .04rem;
+            }
+        }
+    }
+}

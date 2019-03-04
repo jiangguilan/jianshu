@@ -1,0 +1,124 @@
+$lineColor: #f0f0f0;
+$mainColor:#ea6f5a;
+$highLight: #ea6f5a;
+$mainGreen: #42c02e;
+
+
+$lightGrey: #eee;
+$midGrey: #969696;
+$darkGrey: #a5a5a5;
+$bgGrey:#f1f1f1;
+
+$subTitleColor: #333;
+$subTextColor:#999;
+
+
+$fontSize: .17rem;
+$smallFontSize: .14rem;
+
+* {
+  font-family: -apple-system, SF UI Text, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  /* 标准盒模型，content=盒子width，height，支持IE8+, */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: $fontSize;
+}
+body,html,#app{
+  width: 100%;
+  height: 100%;
+}
+
+/* 滚动条 */
+div::-webkit-scrollbar {
+  width: 0;
+  background-color: #fff;
+}
+div::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px 0;
+  border-radius: 0.08rem;
+  background-color: #fff;
+}
+div::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px 0;
+  background-color: 0;
+}
+.lt {
+  float: left;
+}
+.rt {
+  float: right;
+}
+.clear {
+  clear: both;
+}
+.clear:before {
+  display: table;
+  content: '';
+}
+.clear:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+
+.line-top{
+  border-top: 1px solid $lineColor;
+}
+.line-bottom{
+  border-bottom: 1px solid $lineColor;
+}
+.fa{
+  color: $subTextColor;
+}
+.swiper-pagination-bullet{
+  width: 25px !important;
+  height: 2px !important;
+  background-color: hsla(0,0%,47%,.9);
+  margin: 0 .1rem;
+}
+.swiper-pagination-bullet-active{
+  background-color: #fff;
+}
+.banner{
+  cursor: pointer;
+  &:hover .swiper-button-prev,&:hover .swiper-button-next{
+    visibility: visible;
+  }
+  .swiper-button-prev, .swiper-button-next{
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: .18rem;
+    text-align: center;
+    line-height: .5rem;
+    width: .4rem;
+    height: .5rem;
+    border-radius: 0 .04rem .04rem 0;
+    left: 0;
+    visibility: hidden;
+  }
+  .swiper-button-next{
+    left: unset;
+    right: 0;
+    border-radius: .04rem 0 0 .04rem;
+  }
+}

@@ -1,0 +1,99 @@
+.homePage {
+  width: 100%;
+  height: 100%;
+  .header {
+    height: 0.56rem;
+  }
+  .content {
+    width: 9.6rem;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0.3rem 0.15rem;
+    .main {
+      width: 66%;
+      height: auto;
+      padding-right: 0.15rem;
+      .banner {
+        margin-bottom: 0.3rem;
+        width: 100%;
+        height: 2.7rem;
+        overflow: hidden;
+        position: relative;
+        .swiper-pagination {
+          bottom: .1rem;
+          left: 50%;
+          margin-left: -.5rem;
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.08rem;
+          }
+        }
+      }
+      .box {
+        .item {
+          padding: 0.3rem 0;
+          overflow: hidden;
+          .left {
+            width: 75%;
+            .title {
+              width: 100%;
+              a {
+                display: inline-block;
+                width: 100%;
+                color: $subTitleColor;
+                font-weight: 700;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+              }
+            }
+            .text {
+              color: $subTextColor;
+              font-size: 0.13rem;
+              margin: 0.1rem 0;
+            }
+            .icon-box {
+              .item {
+                margin-left: 0.1rem;
+                color: $subTextColor;
+                font-size: 0.13rem;
+                i.active {
+                  color: $mainColor;
+                }
+              }
+            }
+          }
+          .right {
+            width: 25%;
+            height: 1rem;
+            img {
+              border-radius: 0.04rem;
+            }
+          }
+        }
+      }
+      .read-more {
+        width: 100%;
+        height: 0.4rem;
+        border-radius: 0.2rem;
+        background: $darkGrey;
+        text-align: center;
+        line-height: 0.4rem;
+        color: #fff;
+        margin: 0.3rem auto 0.6rem;
+      }
+    }
+    .left-side {
+      width: 34%;
+      height: auto;
+      padding-left: 0.15rem;
+    }
+  }
+  .bottom {
+    width: 9.6rem;
+    height: 1.13rem;
+    margin: 0 auto;
+  }
+}

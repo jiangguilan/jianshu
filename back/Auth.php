@@ -1,6 +1,5 @@
 <?php
     require './init.php';
-    // var_dump($conn);
     // 登录
     function login(){
         $account = $_GET['account'];
@@ -34,7 +33,6 @@
     // 注册
     function register(){
         global $conn;//无效，所以在init文件global
-        // var_dump($conn);
         $name = $_GET['name'];
         $account = $_GET['account'];
         $pwd = $_GET['pwd'];

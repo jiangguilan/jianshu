@@ -7,6 +7,9 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 import 'swiper/dist/css/swiper.css'
 
+import GB from './tools/global.js'
+Vue.prototype.gb = GB;
+
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
 

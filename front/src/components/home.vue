@@ -94,6 +94,10 @@ export default {
         headerPage,
         bottomPage,
         leftSidePage
+    },
+    mounted(){
+        console.log(1)
+        this.gb.post()
     }
 };
 </script>

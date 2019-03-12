@@ -3,28 +3,41 @@
     // var_dump($conn);
     // 登录
     function login(){
-        @$name = $_GET['name'];
-        @$pwd = $_GET['pwd'];
-        echo ($name.' '.$pwd);
-        // return [
-        //     "code" => 1,
-        //     "data" => [
-        //         "name" => $name,
-        //         "account" => $account,
-        //         "pwd" => $pwd,
-        //         "gender" => $gender,
-        //         "born" => $born
-        //     ]
-        // ];
+        $account = $_GET['account'];
+        $pwd = $_GET['pwd'];
+        require('./isExists.php');
+        if(check('user_account',$account,'user') && check('user_password',$pwd,'user'))
+        {
+            return [
+                "code" => 1,
+                "data" => [
+                    "msg" => "登录成功",
+                    "account" => $account,
+                    "pwd" => $pwd
+                ]
+            ];
+        }
+        else
+        {
+            return [
+                "code" => 0,
+                "data" => [
+                    "msg" => "用户名或密码错误",
+                    "account" => $account,
+                    "pwd" => $pwd
+                ]
+            ];
+        }
+        
     }
 
     // 注册
     function register(){
         global $conn;//无效，所以在init文件global
         // var_dump($conn);
-        @$name = $_GET['name'];
-        @$account = $_GET['account'];
-        @$pwd = $_GET['pwd'];
+        $name = $_GET['name'];
+        $account = $_GET['account'];
+        $pwd = $_GET['pwd'];
         @$gender = $_GET['gender'];
         @$born = $_GET['born'];
         if(!$gender)
@@ -82,19 +95,16 @@
             }              
             else{
                 require('./isExists.php');
-                // var_dump(gettype(check('user_name',$name,'user')));
-                // var_dump(json_encode(check('user_account',$account,'user')));
-                // return;
                 $checkNameResult = check('user_name',$name,'user');
                 $checkAccountResult = check('user_account',$account,'user');
-                if(gettype($checkNameResult) == "array" && count($checkNameResult) == 1)
+                if($checkNameResult)
                 {
                     return [
                         "code" => 0,
                         "msg" => "用户名已存在！"
                     ];
                 }
-                else if(gettype($checkAccountResult) == "array" && count($checkAccountResult) == 1)
+                else if($checkAccountResult)
                 {
                     return [
                         "code" => 0,

@@ -7,13 +7,13 @@
         // var_dump($sql);
         // echo '</br>';
         return $result;
-        // if($result)
-        // {
-        //         return 1;
-        // }
-        // else 
-        // {
-        //     return 0;
-        // }
+        if(gettype($result) == "array" && count($result) == 1)
+        {
+                return true;
+        }
+        else 
+        {
+            return false;
+        }
     }
 ?>

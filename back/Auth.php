@@ -107,17 +107,20 @@
                     $sql = "insert into user(id,user_level, user_name,  user_password, user_account, create_time, gender, born) value ('',2,'$name','$pwd','$account',now(),0,null)";
                     $result = mysqli_query($conn,$sql);
                     var_dump($result);
-
-                    // return [
-                    //     "code" => 1,
-                    //     "data" => [
-                    //         "name" => $name,
-                    //         "account" => $account,
-                    //         "pwd" => $pwd,
-                    //         "gender" => $gender,
-                    //         "born" => $born
-                    //     ]
-                    // ];
+                    if($result)
+                    {
+                        return [
+                            "code" => 1,
+                            "data" => [
+                                "msg" => "注册成功",
+                                "name" => $name,
+                                "account" => $account,
+                                "pwd" => $pwd,
+                                "gender" => $gender,
+                                "born" => $born
+                            ]
+                        ];
+                    }
                 }
             }
         }         

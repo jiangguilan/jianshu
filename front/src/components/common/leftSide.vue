@@ -50,9 +50,5 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-@import '../../assets/scss/common.scss';
-@import '../../assets/scss/leftSide.scss';
-</style>
 
 

@@ -17,7 +17,6 @@ function G(){
 //     post: function (){
 
 //     }
-    // get:function(){}
 // }
 
 module.exports = new G();

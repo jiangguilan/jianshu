@@ -17,7 +17,10 @@ function G(){
 //     post: function (){
 
 //     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> f18b419f87721dc3b19643578aece01ed89554f9
 // }
 
 module.exports = new G();
